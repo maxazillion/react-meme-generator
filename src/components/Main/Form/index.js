@@ -1,11 +1,17 @@
 const Form = () => {
   return (
     <form>
-      <label>
-        Name:
-        <input type="text" name="name" />
-      </label>
-      <input type="submit" value="Submit" />
+      <div className="flex flex-col">
+        <label>
+          Top:
+          <input type="text" top="Top" />
+        </label>
+        <label>
+          Bottom:
+          <input type="text" top="Bottom" />
+        </label>
+        <input type="submit" value="Submit" />
+      </div>
     </form>
   );
 };

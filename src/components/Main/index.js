@@ -7,8 +7,10 @@ const qc = new QueryClient();
 const Main = () => (
   <main>
     <QueryClientProvider client={qc}>
-      <Meme />
-      <Form />
+      <div className="flex m-4">
+        <Form />
+        <Meme />
+      </div>
     </QueryClientProvider>
   </main>
 );
