@@ -4,11 +4,15 @@ import Meme from "./Meme";
 
 const qc = new QueryClient();
 
+const formHandler = (event) => {
+  console.log(event);
+};
+
 const Main = () => (
   <main>
     <QueryClientProvider client={qc}>
       <div className="flex m-4">
-        <Form />
+        <Form submitHandler={formHandler} />
         <Meme />
       </div>
     </QueryClientProvider>
