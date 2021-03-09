@@ -1,17 +1,13 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
 import Input from "./Input";
 
 const Form = ({ submitHandler }) => {
-  const [top, setTop] = useState("");
-  const [bottom, setBottom] = useState("");
-
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       {[{ label: "Top Text" }, { label: "Bottom Text" }].map((input, index) => (
         <Input key={index} label={input.label} />
       ))}
-      <input type="submit" value="Submit" />
+      <button className="p-4 bg-black rounded text-white">Submit</button>
     </form>
   );
 };

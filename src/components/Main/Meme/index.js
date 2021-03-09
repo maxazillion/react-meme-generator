@@ -1,25 +1,12 @@
 import api from "api";
 import { getRandomInt } from "lib";
 import { useQuery } from "react-query";
+import Figure from "./Figure";
 
 function renderRandomImage({ data: { memes } }) {
-  return (
-    <>
-      <div>
-        <h1 className="absolute">hi</h1>
-        <div>
-          <img
-            className="max-h-30"
-            src={memes[getRandomInt(0, memes.length - 1)].url}
-            alt="random meme"
-          />
-        </div>
-      </div>
-    </>
-  );
+  return <Figure imgSrc={memes[getRandomInt(0, memes.length - 1)].url} />;
 }
 
-//TODO: receive top and bottom text
 const Meme = () => {
   async function fetchMemeImages() {
     const memes = await api.index();
